@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Js example</h1>
+    <form onsubmit="return clicksubmitbutton(event)">
+        <label>User name</label>
+        <input type="text" id="username" name="username" value=""/><br><br>
+        <label>Password</label>
+        <input type="text" id="password" name="password" value=""/><br><br>
+        <input type="submit" name="button" id="button" value="log in"/>
+    </form>
+    <p id="msg"></p>
+
+    <script>
+        function clicksubmitbutton(event) {
+            event.preventDefault(); 
+            
+            let uname = document.getElementById('username');
+            let msg = document.getElementById('msg');
+            let pass = document.getElementById('password');
+
+            if (uname.value == "" || pass.value == "") { 
+                msg.innerHTML = "Enter Your User name and password!";
+                return false;
+                
+            }
+            if (uname.value=="faisal" && pass.value=="1234")
+            {
+                alert("Login successful!");
+                window.location.href = "home.html";
+                return true;
+            }
+            if (uname.value != "faisal" || pass.value != "1234")
+            { 
+                msg.innerHTML = "Incorrect Usernme or Pssword !";
+                return false;
+            }
+             else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
