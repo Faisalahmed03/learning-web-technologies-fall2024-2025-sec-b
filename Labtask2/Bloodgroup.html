@@ -9,7 +9,7 @@
             border: none;
             height: 2px; 
             width: 30%;
-            background-color: black;
+            background-color: rgb(255, 22, 22);
             margin: 20px 0;
         }
     </style>
@@ -43,7 +43,7 @@
             let message = document.getElementById("msg");
 
             if (bloodGroup) {
-                message.textContent = "Selected blood group is : "+bloodGroup;
+                message.innerHTML = "Selected blood group is : "+bloodGroup;
                 message.style.color = "green";
             } else {
                 alert("Please select a blood group")
